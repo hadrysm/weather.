@@ -19,6 +19,10 @@ font-family: 'Open Sans Condensed', sans-serif;
 font-size: 1.6rem;
 }
 
+p{
+   font-family: 'Open Sans', sans-serif;
+}
+
 `;
 
 export default GlobalStyled;

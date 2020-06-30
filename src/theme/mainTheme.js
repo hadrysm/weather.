@@ -26,12 +26,13 @@ export const theme = {
     },
     size: {
       xxs: '1rem',
-      xs: '1.3rem',
+      xs: '1.2rem',
       s: '1.4rem',
       m: '1.6rem',
       l: '1.8rem',
       xl: '1.9rem',
-      xxl: '2.2rem',
+      xxl: '2.4rem',
+      xxxl: '3.6rem',
     },
   },
 

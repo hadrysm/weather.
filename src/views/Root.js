@@ -1,11 +1,12 @@
 import React from 'react';
 
 import MainTemplate from 'templates/MainTemplate';
+import Card from 'components/Card/Card';
 
 const Root = () => {
   return (
     <MainTemplate>
-      <h1>hi</h1>
+      <Card />
     </MainTemplate>
   );
 };
