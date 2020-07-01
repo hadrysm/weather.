@@ -1,14 +1,24 @@
 import React from 'react';
-// import styled from 'styled-components';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import Logo from 'components/Logo/Logo';
 import Heading from 'components/Heading/Heading';
 
+const StyledHeader = styled.header`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 10vh;
+  width: 100%;
+  padding: 2rem;
+`;
+
 const Header = () => (
-  <header>
-    <Heading />
-    <Logo />
-  </header>
+  <StyledHeader>
+    <Heading>weather.</Heading>
+    <Logo as={Link} to="/" />
+  </StyledHeader>
 );
 
 export default Header;

@@ -1,5 +1,12 @@
 import React from 'react';
 
-const Home = () => <div>Home</div>;
+import UserPageTemplate from 'templates/UserPageTemplate';
+import Form from 'components/Form/Form';
+
+const Home = () => (
+  <UserPageTemplate>
+    <Form />
+  </UserPageTemplate>
+);
 
 export default Home;
