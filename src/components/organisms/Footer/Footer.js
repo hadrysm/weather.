@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import ButtonIcon from 'components/ButtonIcon/ButtonIcon';
+import ButtonIcon from 'components/atoms/ButtonIcon/ButtonIcon';
 
 import githubIcon from 'assets/icons/github.svg';
 import linkedinIcon from 'assets/icons/linkedin.svg';

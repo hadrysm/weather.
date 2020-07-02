@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import Logo from 'components/Logo/Logo';
-import Heading from 'components/Heading/Heading';
+import Logo from 'components/atoms/Logo/Logo';
+import Heading from 'components/atoms/Heading/Heading';
 
 const StyledHeader = styled.header`
   display: flex;

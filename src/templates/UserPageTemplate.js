@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import Header from 'components/Header/Header';
-import Footer from 'components/Footer/Footer';
+import Header from 'components/organisms/Header/Header';
+import Footer from 'components/organisms/Footer/Footer';
 
 import bgcImage1 from 'assets/image/bgc1.svg';
 import bgcImage2 from 'assets/image/bgc2.svg';

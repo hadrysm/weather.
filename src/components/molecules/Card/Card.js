@@ -1,9 +1,9 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import Heading from 'components/Heading/Heading';
-import Paragraph from 'components/Paragraph/Paragraph';
-import List from 'components/List/List';
+import Heading from 'components/atoms/Heading/Heading';
+import Paragraph from 'components/atoms/Paragraph/Paragraph';
+import List from 'components/molecules/List/List';
 
 import sunnyIcon from 'assets/icons/sunny.svg';
 
