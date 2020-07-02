@@ -21,14 +21,14 @@ const StyledButtonIcon = styled(ButtonIcon)`
   right: -2.5rem;
 `;
 
-const Form = ({ fetchWeather }) => {
+const Form = ({ getWeather }) => {
   const [searchValue, setSearchValue] = useState('');
 
   const handleChange = e => setSearchValue(e.target.value);
 
   const handleSubmit = e => {
     e.preventDefault();
-    fetchWeather();
+    getWeather(searchValue);
   };
 
   return (
@@ -40,11 +40,11 @@ const Form = ({ fetchWeather }) => {
 };
 
 Form.propTypes = {
-  fetchWeather: PropTypes.func.isRequired,
+  getWeather: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchWeather: () => dispatch(actions.fetchWeatherStart()),
+  getWeather: city => dispatch(actions.getWeather(city)),
 });
 
 export default connect(null, mapDispatchToProps)(Form);

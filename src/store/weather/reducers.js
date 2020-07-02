@@ -12,12 +12,14 @@ const weatherReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         loading: true,
+        error: null,
       };
 
     case types.FETCH_WEATHER_SUCCES:
       return {
         ...state,
         loading: false,
+        error: null,
         weatherData: action.weatherData,
       };
 
