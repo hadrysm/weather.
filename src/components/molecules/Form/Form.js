@@ -1,5 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
+
+import actions from 'store/weather/actions';
 
 import Input from 'components/atoms/Input/Input';
 import ButtonIcon from 'components/atoms/ButtonIcon/ButtonIcon';
@@ -17,13 +21,30 @@ const StyledButtonIcon = styled(ButtonIcon)`
   right: -2.5rem;
 `;
 
-const Form = () => {
+const Form = ({ fetchWeather }) => {
+  const [searchValue, setSearchValue] = useState('');
+
+  const handleChange = e => setSearchValue(e.target.value);
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    fetchWeather();
+  };
+
   return (
-    <StyledWrapper>
-      <Input placeholder="Enter a city..." />
+    <StyledWrapper onSubmit={handleSubmit}>
+      <Input onChange={handleChange} value={searchValue} placeholder="Enter a city..." />
       <StyledButtonIcon type="submit" icon={searchIcon} />
     </StyledWrapper>
   );
 };
 
-export default Form;
+Form.propTypes = {
+  fetchWeather: PropTypes.func.isRequired,
+};
+
+const mapDispatchToProps = dispatch => ({
+  fetchWeather: () => dispatch(actions.fetchWeatherStart()),
+});
+
+export default connect(null, mapDispatchToProps)(Form);

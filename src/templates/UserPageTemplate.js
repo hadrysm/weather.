@@ -12,9 +12,11 @@ import bgcImage3 from 'assets/image/bgc3.svg';
 const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   position: relative;
   min-height: 100vh;
+  padding-bottom: 25vh;
   background-image: url(${bgcImage1});
   background-repeat: no-repeat;
   background-size: 100%;
@@ -42,7 +44,7 @@ const UserPageTemplate = ({ children }) => (
     <StyledBgcImage2 src={bgcImage3} alt="" />
     <Header />
     {children}
-    <Footer>footer</Footer>
+    <Footer />
   </StyledWrapper>
 );
 
