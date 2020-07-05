@@ -12,7 +12,7 @@ const StyledWrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  max-width: 30rem;
+  max-width: 35rem;
   margin: 0 auto;
   border-radius: 2.5rem;
   background-color: ${({ theme }) => theme.dark200};
@@ -21,10 +21,10 @@ const StyledWrapper = styled.div`
 
 const InnerWrapper = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  padding: 1.4rem 0;
+  padding: 1.4rem 2rem;
   background-color: ${({ theme }) => theme.dark200};
 
   ${({ darker }) =>
@@ -50,14 +50,18 @@ const StyledImg = styled.img`
   height: 6rem;
 `;
 
+const InfoWrapper = styled.div`
+  margin: 0 1rem;
+`;
+
 const Card = () => (
   <StyledWrapper>
     <InnerWrapper darker>
       <StyledHeading as="h2">23°C</StyledHeading>
-      <div>
+      <InfoWrapper>
         <StyledParagaph>Clear</StyledParagaph>
         <StyledParagaph>Opole, Poland</StyledParagaph>
-      </div>
+      </InfoWrapper>
       <StyledImg src={sunnyIcon} alt="sunny" />
     </InnerWrapper>
     <InnerWrapper>

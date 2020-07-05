@@ -16,7 +16,7 @@ const StyledWrapper = styled.div`
   align-items: center;
   position: relative;
   min-height: 100vh;
-  padding-bottom: 25vh;
+  padding-bottom: 15vh;
   background-image: url(${bgcImage1});
   background-repeat: no-repeat;
   background-size: 100%;
@@ -27,7 +27,6 @@ const StyledWrapper = styled.div`
 const StyledBgcImage1 = styled.img`
   position: absolute;
   width: 100%;
-  height: 100;
   bottom: 0;
   right: 0;
   z-index: -1;
@@ -40,11 +39,11 @@ const StyledBgcImage2 = styled(StyledBgcImage1)`
 
 const UserPageTemplate = ({ children }) => (
   <StyledWrapper>
-    <StyledBgcImage1 src={bgcImage2} alt="" />
-    <StyledBgcImage2 src={bgcImage3} alt="" />
     <Header />
     {children}
     <Footer />
+    <StyledBgcImage1 src={bgcImage2} alt="" />
+    <StyledBgcImage2 src={bgcImage3} alt="" />
   </StyledWrapper>
 );
 

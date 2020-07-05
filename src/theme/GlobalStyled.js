@@ -23,6 +23,12 @@ p{
    font-family: 'Open Sans', sans-serif;
 }
 
+img{
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
 `;
 
 export default GlobalStyled;

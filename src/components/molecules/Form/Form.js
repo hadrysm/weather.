@@ -18,7 +18,7 @@ const StyledWrapper = styled.form`
 const StyledButtonIcon = styled(ButtonIcon)`
   position: absolute;
   top: 0;
-  right: -2.5rem;
+  right: -0.5rem;
 `;
 
 const Form = ({ getWeather }) => {
@@ -29,6 +29,7 @@ const Form = ({ getWeather }) => {
   const handleSubmit = e => {
     e.preventDefault();
     getWeather(searchValue);
+    setSearchValue('');
   };
 
   return (
