@@ -6,6 +6,7 @@ import ListItem from './ListItem/ListItem';
 
 const ListWrapper = styled.ul`
   width: 90%;
+  padding: 1rem 0;
   margin: 0 auto;
   list-style: none;
 `;
@@ -21,5 +22,4 @@ const List = ({ weatherData }) => {
 List.propTypes = {
   weatherData: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
-
 export default List;

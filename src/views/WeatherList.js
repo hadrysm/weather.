@@ -1,5 +1,7 @@
 import React from 'react';
 
-const WeatherList = () => <div>weahter list</div>;
+import UserPageTemplate from 'templates/UserPageTemplate';
+
+const WeatherList = () => <UserPageTemplate>list</UserPageTemplate>;
 
 export default WeatherList;

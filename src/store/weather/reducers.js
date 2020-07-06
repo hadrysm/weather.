@@ -4,9 +4,10 @@ const INITIAL_STATE = {
   loading: false,
   weatherData: [],
   error: null,
+  weatherCityList: [],
 };
 
-const weatherReducer = (state = INITIAL_STATE, { type, weatherData }) => {
+const weatherReducer = (state = INITIAL_STATE, { type, weatherData, city }) => {
   switch (type) {
     case types.FETCH_WEATHER_START:
       return {
@@ -28,6 +29,12 @@ const weatherReducer = (state = INITIAL_STATE, { type, weatherData }) => {
         ...state,
         loading: false,
         error: true,
+      };
+
+    case types.ADD_CITY_TO_LIST:
+      return {
+        ...state,
+        weatherCityList: [...state.weatherCityList, city],
       };
 
     default:

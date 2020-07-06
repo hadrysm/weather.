@@ -4,6 +4,7 @@ import types from './types';
 const fetchWeatherStart = () => ({ type: types.FETCH_WEATHER_START });
 const fetchWeatherFail = () => ({ type: types.FETCH_WEATHER_FAIL });
 const fetchWeatherSucces = weatherData => ({ type: types.FETCH_WEATHER_SUCCES, weatherData });
+const addCityToList = city => ({ type: types.ADD_CITY_TO_LIST, city });
 
 const getWeather = city => {
   return async dispatch => {
@@ -36,6 +37,7 @@ const getWeather = city => {
         weatherData.push(currentDay);
       }
       dispatch(fetchWeatherSucces(weatherData));
+      dispatch(addCityToList(weatherData));
     } catch (err) {
       dispatch(fetchWeatherFail());
     }
@@ -47,4 +49,5 @@ export default {
   fetchWeatherFail,
   fetchWeatherSucces,
   getWeather,
+  addCityToList,
 };
