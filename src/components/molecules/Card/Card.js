@@ -1,18 +1,18 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import Heading from 'components/atoms/Heading/Heading';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
 import List from 'components/molecules/List/List';
-
-import sunnyIcon from 'assets/icons/sunny.svg';
 
 const StyledWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  max-width: 35rem;
+  width: 30rem;
   margin: 0 auto;
   border-radius: 2.5rem;
   background-color: ${({ theme }) => theme.dark200};
@@ -21,10 +21,10 @@ const StyledWrapper = styled.div`
 
 const InnerWrapper = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 1.4rem 2rem;
+  padding: 1rem 1.5rem;
   background-color: ${({ theme }) => theme.dark200};
 
   ${({ darker }) =>
@@ -43,6 +43,11 @@ const StyledHeading = styled(Heading)`
 
 const StyledParagaph = styled(Paragraph)`
   font-size: ${({ theme }) => theme.font.size.m};
+  margin: 0 1rem;
+
+  ::first-letter {
+    text-transform: uppercase;
+  }
 `;
 
 const StyledImg = styled.img`
@@ -54,20 +59,36 @@ const InfoWrapper = styled.div`
   margin: 0 1rem;
 `;
 
-const Card = () => (
-  <StyledWrapper>
-    <InnerWrapper darker>
-      <StyledHeading as="h2">23°C</StyledHeading>
-      <InfoWrapper>
-        <StyledParagaph>Clear</StyledParagaph>
-        <StyledParagaph>Opole, Poland</StyledParagaph>
-      </InfoWrapper>
-      <StyledImg src={sunnyIcon} alt="sunny" />
-    </InnerWrapper>
-    <InnerWrapper>
-      <List />
-    </InnerWrapper>
-  </StyledWrapper>
-);
+const Card = ({ weatherData }) => {
+  const [currentDayWeather, ...restWeather] = weatherData;
 
-export default Card;
+  const { temp, location, description, icon } = currentDayWeather;
+
+  return (
+    <StyledWrapper>
+      <InnerWrapper darker>
+        <StyledHeading as="h2">{temp}°C</StyledHeading>
+        <InfoWrapper>
+          <StyledParagaph>{description.main}</StyledParagaph>
+          <StyledParagaph>
+            {location.city}, {location.country}
+          </StyledParagaph>
+        </InfoWrapper>
+        <StyledImg src={icon} alt={description.main} />
+      </InnerWrapper>
+      <InnerWrapper>
+        <List weatherData={restWeather} />
+      </InnerWrapper>
+    </StyledWrapper>
+  );
+};
+
+const mapStateToProps = ({ weatherData }) => ({
+  weatherData,
+});
+
+Card.propTypes = {
+  weatherData: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
+
+export default connect(mapStateToProps, null)(Card);

@@ -6,8 +6,8 @@ const INITIAL_STATE = {
   error: null,
 };
 
-const weatherReducer = (state = INITIAL_STATE, action) => {
-  switch (action.type) {
+const weatherReducer = (state = INITIAL_STATE, { type, weatherData }) => {
+  switch (type) {
     case types.FETCH_WEATHER_START:
       return {
         ...state,
@@ -20,7 +20,7 @@ const weatherReducer = (state = INITIAL_STATE, action) => {
         ...state,
         loading: false,
         error: null,
-        weatherData: action.weatherData,
+        weatherData,
       };
 
     case types.FETCH_WEATHER_FAIL:
