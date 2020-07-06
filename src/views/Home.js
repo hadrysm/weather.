@@ -1,7 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 import UserPageTemplate from 'templates/UserPageTemplate';
 import Form from 'components/molecules/Form/Form';
@@ -9,25 +9,29 @@ import Card from 'components/molecules/Card/Card';
 
 import undrawImage from 'assets/image/undraw.svg';
 
-const InnerWrapper = styled.div`
-  width: 90%;
-  margin: 0 auto;
+const StyledImg = styled.img`
+  flex: 1;
+  height: 100%;
+`;
+
+const StyledForm = styled(Form)`
+  margin: auto;
+`;
+
+const StyledCard = styled(Card)`
+  flex: 1;
 `;
 
 const Home = ({ weatherData }) => {
-  let mainContent = (
-    <InnerWrapper>
-      <img src={undrawImage} alt="" />
-    </InnerWrapper>
-  );
+  let mainContent = <StyledImg src={undrawImage} alt="" />;
 
   if (weatherData) {
-    mainContent = <Card />;
+    mainContent = <StyledCard />;
   }
 
   return (
     <UserPageTemplate>
-      <Form />
+      <StyledForm />
       {mainContent}
     </UserPageTemplate>
   );

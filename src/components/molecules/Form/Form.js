@@ -11,8 +11,9 @@ import ButtonIcon from 'components/atoms/ButtonIcon/ButtonIcon';
 import searchIcon from 'assets/icons/search.svg';
 
 const StyledWrapper = styled.form`
-  display: flex;
   position: relative;
+  border-radius: 1rem;
+  box-shadow: 0px 5px 10px 0px ${({ theme }) => theme.secondary};
 `;
 
 const StyledButtonIcon = styled(ButtonIcon)`
@@ -35,7 +36,7 @@ const Form = ({ getWeather }) => {
   return (
     <StyledWrapper onSubmit={handleSubmit}>
       <Input onChange={handleChange} value={searchValue} placeholder="Enter a city..." />
-      <StyledButtonIcon type="submit" icon={searchIcon} />
+      <StyledButtonIcon type="submit" formBtn icon={searchIcon} />
     </StyledWrapper>
   );
 };

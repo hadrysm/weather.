@@ -37,7 +37,7 @@ const Svg = styled.svg`
 
 const Spinner = ({ className }) => (
   <Svg viewBox="0 0 50 50" className={className}>
-    <circle className="path" cx="25" cy="25" r="20" fill="none" strokeWidth="4" />
+    <circle className="path" cx="25" cy="25" r="20" fill="#8650FA" strokeWidth="4" />
   </Svg>
 );
 

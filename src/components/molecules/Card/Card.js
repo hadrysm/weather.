@@ -12,7 +12,7 @@ const StyledWrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 30rem;
+  min-width: 30rem;
   margin: 0 auto;
   border-radius: 2.5rem;
   background-color: ${({ theme }) => theme.dark200};
@@ -38,11 +38,13 @@ const InnerWrapper = styled.div`
 
 const StyledHeading = styled(Heading)`
   color: ${({ theme }) => theme.white};
-  font-size: ${({ theme }) => theme.font.size.xxxl};
+
+  @media ${({ theme }) => theme.mq.tablet} {
+    font-size: ${({ theme }) => theme.font.size.xxl};
+  }
 `;
 
 const StyledParagaph = styled(Paragraph)`
-  font-size: ${({ theme }) => theme.font.size.m};
   margin: 0 1rem;
 
   ::first-letter {
@@ -51,12 +53,14 @@ const StyledParagaph = styled(Paragraph)`
 `;
 
 const StyledImg = styled.img`
+  margin: 0;
   width: 6rem;
   height: 6rem;
 `;
 
 const InfoWrapper = styled.div`
-  margin: 0 1rem;
+  flex: 1;
+  margin-left: 1rem;
 `;
 
 const Card = ({ weatherData }) => {

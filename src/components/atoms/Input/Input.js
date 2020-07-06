@@ -12,11 +12,19 @@ const Input = styled.input`
   ::placeholder {
     color: ${({ theme }) => theme.white};
     font-weight: ${({ theme }) => theme.font.weight.bold};
-    font-size: ${({ theme }) => theme.font.size.m};
+    font-size: ${({ theme }) => theme.font.size.s};
   }
 
   ::selection {
     background-color: ${({ theme }) => theme.primary};
+  }
+
+  @media ${({ theme }) => theme.mq.tablet} {
+    font-size: ${({ theme }) => theme.font.size.xxl};
+
+    ::placeholder {
+      font-size: ${({ theme }) => theme.font.size.xl};
+    }
   }
 `;
 

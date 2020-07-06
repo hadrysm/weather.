@@ -6,12 +6,13 @@ import Logo from 'components/atoms/Logo/Logo';
 import Heading from 'components/atoms/Heading/Heading';
 
 const StyledHeader = styled.header`
+  max-width: ${({ theme }) => theme.layout.maxContainerWidth};
   display: flex;
   justify-content: flex-end;
   align-items: center;
   min-height: 10vh;
   width: 100%;
-  padding: 2rem;
+  padding: 1rem 0 2rem;
 `;
 
 const Header = () => (

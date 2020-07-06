@@ -10,13 +10,16 @@ const ItemWrapper = styled.li`
   justify-content: space-between;
   width: 100%;
   align-items: center;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   text-transform: uppercase;
+
+  @media ${({ theme }) => theme.mq.tablet} {
+    padding: 1rem 0;
+  }
 `;
 
 const StyledHeading = styled(Heading)`
   color: ${({ theme }) => theme.white};
-  font-size: ${({ theme }) => theme.font.size.xxl};
 `;
 
 const StyledHeaderWrapper = styled.div`
