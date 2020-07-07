@@ -7,7 +7,7 @@ const INITIAL_STATE = {
   weatherCityList: [],
 };
 
-const weatherReducer = (state = INITIAL_STATE, { type, weatherData, city }) => {
+const weatherReducer = (state = INITIAL_STATE, { type, weatherData, city, currentCityData }) => {
   switch (type) {
     case types.FETCH_WEATHER_START:
       return {
@@ -35,6 +35,12 @@ const weatherReducer = (state = INITIAL_STATE, { type, weatherData, city }) => {
       return {
         ...state,
         weatherCityList: [...state.weatherCityList, city],
+      };
+
+    case types.SET_CURRENT_CITY:
+      return {
+        ...state,
+        weatherData: [...currentCityData],
       };
 
     default:

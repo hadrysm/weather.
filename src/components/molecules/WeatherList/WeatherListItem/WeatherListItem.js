@@ -32,7 +32,7 @@ const StyledImg = styled.img`
   margin: 0 0 0 1rem;
 `;
 
-const ListItem = ({ weatherData: { day, description, temp, icon } }) => (
+const WeatherListItem = ({ weatherData: { day, description, temp, icon } }) => (
   <ItemWrapper>
     <StyledHeaderWrapper>
       <StyledHeading>{day}</StyledHeading>
@@ -44,14 +44,13 @@ const ListItem = ({ weatherData: { day, description, temp, icon } }) => (
   </ItemWrapper>
 );
 
-ListItem.propTypes = {
+WeatherListItem.propTypes = {
   weatherData: PropTypes.shape({
     day: PropTypes.string,
-    description: PropTypes.object,
-    location: PropTypes.object,
+    description: PropTypes.objectOf(PropTypes.string),
     temp: PropTypes.number,
     icon: PropTypes.string,
   }).isRequired,
 };
 
-export default ListItem;
+export default WeatherListItem;

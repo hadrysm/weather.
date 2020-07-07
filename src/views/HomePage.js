@@ -31,7 +31,7 @@ const StyledButtonIcon = styled(ButtonIcon)`
   right: 10px;
 `;
 
-const Home = ({ weatherData, weatherCityList }) => {
+const HomePage = ({ weatherData, weatherCityList }) => {
   let mainContent = <StyledImg src={undrawImage} alt="" />;
 
   if (weatherData) {
@@ -60,14 +60,14 @@ const mapStateToProps = ({ weatherData, weatherCityList }) => ({
   weatherCityList: weatherCityList.length,
 });
 
-Home.propTypes = {
+HomePage.propTypes = {
   weatherData: PropTypes.number,
   weatherCityList: PropTypes.number,
 };
 
-Home.defaultProps = {
+HomePage.defaultProps = {
   weatherData: 0,
   weatherCityList: 0,
 };
 
-export default connect(mapStateToProps, null)(Home);
+export default connect(mapStateToProps, null)(HomePage);

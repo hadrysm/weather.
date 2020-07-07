@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import Heading from 'components/atoms/Heading/Heading';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
-import List from 'components/molecules/List/List';
+import WeatherList from 'components/molecules/WeatherList/WeatherList';
 
 const StyledWrapper = styled.div`
   display: flex;
@@ -81,7 +81,7 @@ const Card = ({ weatherData }) => {
         <StyledImg src={icon} alt={description.main} />
       </InnerWrapper>
       <InnerWrapper>
-        <List weatherData={restWeather} />
+        <WeatherList weatherData={restWeather} />
       </InnerWrapper>
     </StyledWrapper>
   );
