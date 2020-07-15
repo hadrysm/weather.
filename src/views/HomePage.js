@@ -8,6 +8,7 @@ import UserPageTemplate from 'templates/UserPageTemplate';
 import Form from 'components/molecules/Form/Form';
 import Card from 'components/molecules/Card/Card';
 import ButtonIcon from 'components/atoms/ButtonIcon/ButtonIcon';
+import ErrorHandler from 'components/atoms/ErrorHandler/ErrorHandler';
 
 import undrawImage from 'assets/image/undraw.svg';
 import listIcon from 'assets/icons/list.svg';
@@ -31,43 +32,40 @@ const StyledButtonIcon = styled(ButtonIcon)`
   right: 10px;
 `;
 
-const HomePage = ({ weatherData, weatherCityList }) => {
+const HomePage = ({ weatherData, error }) => {
   let mainContent = <StyledImg src={undrawImage} alt="" />;
 
   if (weatherData) {
-    mainContent = <StyledCard />;
-
-    if (weatherCityList > 1) {
-      mainContent = (
-        <>
-          <StyledCard />
-          <StyledButtonIcon as={Link} to="/weather-list" icon={listIcon} />
-        </>
-      );
-    }
+    mainContent = (
+      <>
+        <StyledCard />
+        <StyledButtonIcon as={Link} to="/weather-list" icon={listIcon} />
+      </>
+    );
   }
 
   return (
     <UserPageTemplate>
       <StyledForm />
       {mainContent}
+      {error && <ErrorHandler />}
     </UserPageTemplate>
   );
 };
 
-const mapStateToProps = ({ weatherData, weatherCityList }) => ({
+const mapStateToProps = ({ weatherData, error }) => ({
   weatherData: weatherData.length,
-  weatherCityList: weatherCityList.length,
+  error,
 });
 
 HomePage.propTypes = {
   weatherData: PropTypes.number,
-  weatherCityList: PropTypes.number,
+  error: PropTypes.bool,
 };
 
 HomePage.defaultProps = {
   weatherData: 0,
-  weatherCityList: 0,
+  error: false,
 };
 
 export default connect(mapStateToProps, null)(HomePage);

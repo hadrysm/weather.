@@ -6,7 +6,7 @@ import ButtonIcon from 'components/atoms/ButtonIcon/ButtonIcon';
 import githubIcon from 'assets/icons/github.svg';
 import linkedinIcon from 'assets/icons/linkedin.svg';
 
-const StyledFooter = styled.footer`
+const StyledWrapper = styled.footer`
   display: flex;
   align-items: center;
   position: absolute;
@@ -18,11 +18,22 @@ const StyledFooter = styled.footer`
   background-color: ${({ theme }) => theme.primary};
 `;
 
+const InnerWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: ${({ theme }) => theme.layout.maxContainerWidth};
+  margin: 0 auto;
+`;
+
 const Footer = () => (
-  <StyledFooter>
-    <ButtonIcon as="a" href="https://github.com/hadrysm" icon={githubIcon} />
-    <ButtonIcon as="a" href="https://www.linkedin.com/" icon={linkedinIcon} />
-  </StyledFooter>
+  <StyledWrapper>
+    <InnerWrapper>
+      <ButtonIcon as="a" href="https://github.com/hadrysm" icon={githubIcon} />
+      <ButtonIcon as="a" href="https://www.linkedin.com/" icon={linkedinIcon} />
+    </InnerWrapper>
+  </StyledWrapper>
 );
 
 export default Footer;

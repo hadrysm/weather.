@@ -6,6 +6,7 @@ const fetchWeatherFail = () => ({ type: types.FETCH_WEATHER_FAIL });
 const fetchWeatherSucces = weatherData => ({ type: types.FETCH_WEATHER_SUCCES, weatherData });
 const addCityToList = city => ({ type: types.ADD_CITY_TO_LIST, city });
 const setCurrentCity = currentCityData => ({ type: types.SET_CURRENT_CITY, currentCityData });
+const setErrorToFalse = () => ({ type: types.SET_ERROR_TO_NULL });
 
 const getWeather = city => {
   return async dispatch => {
@@ -52,4 +53,5 @@ export default {
   getWeather,
   addCityToList,
   setCurrentCity,
+  setErrorToFalse,
 };

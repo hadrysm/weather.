@@ -43,6 +43,12 @@ const weatherReducer = (state = INITIAL_STATE, { type, weatherData, city, curren
         weatherData: [...currentCityData],
       };
 
+    case types.SET_ERROR_TO_NULL:
+      return {
+        ...state,
+        error: null,
+      };
+
     default:
       return state;
   }

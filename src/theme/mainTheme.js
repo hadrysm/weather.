@@ -58,6 +58,6 @@ export const theme = {
   },
 
   layout: {
-    maxContainerWidth: '1400px',
+    maxContainerWidth: '1200px',
   },
 };
