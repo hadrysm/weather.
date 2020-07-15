@@ -4,7 +4,8 @@ const ButtonIcon = styled.button`
   display: block;
   height: 4.8rem;
   width: 4.8rem;
-  margin: 0 0.5rem;
+  margin: 0;
+  margin-left: 0.5rem;
   border-radius: 1rem;
   border: none;
   background-color: ${({ theme }) => theme.secondary};
@@ -13,9 +14,14 @@ const ButtonIcon = styled.button`
   background-size: 60%;
   background-position: center;
   cursor: pointer;
+  transition: background-color 0.1s ease;
 
   :focus {
     outline: none;
+  }
+
+  :hover {
+    background-color: ${({ theme }) => theme.primary};
   }
 `;
 

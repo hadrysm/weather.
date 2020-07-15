@@ -28,8 +28,10 @@ const StyledCard = styled(Card)`
 
 const StyledButtonIcon = styled(ButtonIcon)`
   position: fixed;
-  bottom: 15%;
-  right: 10px;
+  bottom: 5vh;
+  right: 1rem;
+  transform: translateY(50%);
+  z-index: ${({ theme }) => theme.zIndex.level9};
 `;
 
 const HomePage = ({ weatherData, error }) => {
