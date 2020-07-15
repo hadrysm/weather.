@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 const ButtonIcon = styled.button`
   display: block;
@@ -17,12 +17,6 @@ const ButtonIcon = styled.button`
   :focus {
     outline: none;
   }
-
-  ${({ formBtn }) =>
-    formBtn &&
-    css`
-      height: 100%;
-    `}
 `;
 
 export default ButtonIcon;

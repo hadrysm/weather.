@@ -2,6 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
+const StyledWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+`;
+
 const Svg = styled.svg`
   animation: rotate 2s linear infinite;
   margin: 0;
@@ -36,9 +43,11 @@ const Svg = styled.svg`
 `;
 
 const Spinner = ({ className }) => (
-  <Svg viewBox="0 0 50 50" className={className}>
-    <circle className="path" cx="25" cy="25" r="20" fill="#8650FA" strokeWidth="4" />
-  </Svg>
+  <StyledWrapper>
+    <Svg viewBox="0 0 50 50" className={className}>
+      <circle className="path" cx="25" cy="25" r="20" fill="#8650FA" strokeWidth="4" />
+    </Svg>
+  </StyledWrapper>
 );
 
 Spinner.propTypes = {
