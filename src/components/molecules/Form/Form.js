@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
+import { gsap } from 'gsap';
 
 import actions from 'store/weather/actions';
 
@@ -21,6 +22,20 @@ const StyledWrapper = styled.form`
 
 const Form = ({ getWeather, loading }) => {
   const [searchValue, setSearchValue] = useState('');
+  const formRef = useRef(null);
+
+  useEffect(() => {
+    const form = formRef.current;
+
+    gsap.set(form, { autoAlpha: 0, x: '-=100' });
+    const tl = gsap.timeline({
+      defaults: {
+        ease: 'power3.inOut',
+      },
+    });
+
+    tl.to(form, { autoAlpha: 1, x: '+=100', duration: 0.5 });
+  }, [formRef]);
 
   const handleChange = ({ target: { value } }) => setSearchValue(value);
 
@@ -31,7 +46,7 @@ const Form = ({ getWeather, loading }) => {
   };
 
   return (
-    <StyledWrapper onSubmit={handleSubmit}>
+    <StyledWrapper ref={formRef} onSubmit={handleSubmit}>
       <Input onChange={handleChange} value={searchValue} placeholder="Enter a city..." />
       {loading ? <Spinner /> : <ButtonIcon type="submit" icon={searchIcon} />}
     </StyledWrapper>
