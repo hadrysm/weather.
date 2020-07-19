@@ -19,7 +19,7 @@ const StyledImg = styled.img`
 `;
 
 const StyledForm = styled(Form)`
-  margin: auto;
+  margin: 0 auto 1rem;
 `;
 
 const StyledCard = styled(Card)`

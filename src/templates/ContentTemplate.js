@@ -6,7 +6,7 @@ import UserPageTemplate from 'templates/UserPageTemplate';
 
 const StyledWrapper = styled.main`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   flex-direction: column;
   width: 100%;
