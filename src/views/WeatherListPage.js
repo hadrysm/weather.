@@ -2,13 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import UserPageTemplate from 'templates/UserPageTemplate';
+import ContentTemplate from 'templates/ContentTemplate';
 import CityList from 'components/molecules/CityList/CityList';
 
 const WeatherListPage = ({ weatherCityList }) => (
-  <UserPageTemplate>
+  <ContentTemplate>
     {weatherCityList.length > 0 && <CityList cityList={weatherCityList} />}
-  </UserPageTemplate>
+  </ContentTemplate>
 );
 
 const mapStateToProps = ({ weatherCityList }) => ({ weatherCityList });

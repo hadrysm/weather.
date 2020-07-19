@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import UserPageTemplate from 'templates/UserPageTemplate';
+import ContentTemplate from 'templates/ContentTemplate';
 import Form from 'components/molecules/Form/Form';
 import Card from 'components/molecules/Card/Card';
 import ButtonIcon from 'components/atoms/ButtonIcon/ButtonIcon';
@@ -47,11 +47,11 @@ const HomePage = ({ weatherData, error }) => {
   }
 
   return (
-    <UserPageTemplate>
+    <ContentTemplate>
       <StyledForm />
       {mainContent}
       {error && <ErrorHandler />}
-    </UserPageTemplate>
+    </ContentTemplate>
   );
 };
 
