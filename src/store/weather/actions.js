@@ -14,7 +14,7 @@ const getWeather = city => {
 
     try {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=b8f549ae1c0e19d2820065b1dd7ea410&units=metric`,
+        `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`,
       );
       const data = await response.json();
       const { list, city: cityData } = data;

@@ -17,6 +17,10 @@ const StyledWrapper = styled.div`
   border-radius: 2.5rem;
   background-color: ${({ theme }) => theme.dark200};
   overflow: hidden;
+
+  @media ${({ theme }) => theme.mq.desktop} {
+    min-width: 50rem;
+  }
 `;
 
 const InnerWrapper = styled.div`

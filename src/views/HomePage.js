@@ -16,6 +16,10 @@ import listIcon from 'assets/icons/list.svg';
 const StyledImg = styled.img`
   flex: 1;
   height: 100%;
+
+  @media ${({ theme }) => theme.mq.desktop} {
+    width: 40%;
+  }
 `;
 
 const StyledForm = styled(Form)`
@@ -29,7 +33,7 @@ const StyledCard = styled(Card)`
 const StyledButtonIcon = styled(ButtonIcon)`
   position: fixed;
   bottom: 5vh;
-  right: 1rem;
+  right: 5%;
   transform: translateY(50%);
   z-index: ${({ theme }) => theme.zIndex.level9};
 `;

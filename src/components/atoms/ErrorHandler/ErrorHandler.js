@@ -25,6 +25,7 @@ const StyledWrapper = styled.div`
 
 const StyledParagraph = styled(Paragraph)`
   font-size: ${({ theme }) => theme.font.size.xl};
+  padding: 0 3rem;
 `;
 
 const StyledButtonIcon = styled(ButtonIcon)`
