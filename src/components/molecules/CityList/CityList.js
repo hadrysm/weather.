@@ -12,6 +12,10 @@ const ListWrapper = styled.ul`
   background: ${({ theme }) => theme.secondary};
   border-radius: 2rem;
   box-shadow: 0px 10px 8px 0px ${({ theme }) => theme.secondary};
+
+  @media ${({ theme }) => theme.mq.desktop} {
+    width: 50%;
+  }
 `;
 
 const CityList = ({ cityList }) => {

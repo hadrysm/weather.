@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { gsap } from 'gsap';
 
 import actions from 'store/weather/actions';
 
@@ -37,6 +38,8 @@ const StyledButtonIcon = styled(ButtonIcon)`
 `;
 
 export const ErrorHandler = ({ setErrorToFalse }) => {
+  const errorWrapper = useRef(null);
+
   useEffect(() => {
     const idTimeout = setTimeout(() => {
       setErrorToFalse();
@@ -45,10 +48,20 @@ export const ErrorHandler = ({ setErrorToFalse }) => {
     return () => clearInterval(idTimeout);
   }, [setErrorToFalse]);
 
+  useEffect(() => {
+    const errHandler = errorWrapper.current;
+
+    gsap.set(errHandler, { y: '-=100%', autoAlpha: 0 });
+
+    const tl = gsap.timeline({ defaults: { ease: 'power3.inOut' } });
+
+    tl.to(errHandler, { y: '+=100%', autoAlpha: 1 });
+  }, [errorWrapper]);
+
   const handleClick = () => setErrorToFalse();
 
   return (
-    <StyledWrapper>
+    <StyledWrapper ref={errorWrapper}>
       <StyledParagraph>
         Sorry, the given city is not in the database.
         <span role="img" aria-label="confused">
