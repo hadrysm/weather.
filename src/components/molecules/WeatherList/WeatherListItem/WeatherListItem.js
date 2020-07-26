@@ -35,11 +35,10 @@ const StyledImg = styled.img`
 const WeatherListItem = ({ weatherData: { day, description, temp, icon } }) => (
   <ItemWrapper>
     <StyledHeaderWrapper>
-      <StyledHeading>{day}</StyledHeading>
+      <StyledHeading as="h3">{day}</StyledHeading>
       <Paragraph>{description.detailed}</Paragraph>
     </StyledHeaderWrapper>
-
-    <StyledHeading>{temp}°C</StyledHeading>
+    <StyledHeading as="h3">{temp}°C</StyledHeading>
     <StyledImg src={icon} alt={description.main} />
   </ItemWrapper>
 );

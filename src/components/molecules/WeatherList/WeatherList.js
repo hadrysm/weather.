@@ -6,7 +6,6 @@ import WeatherListItem from './WeatherListItem/WeatherListItem';
 
 const ListWrapper = styled.ul`
   width: 90%;
-  padding: 1rem 0;
   margin: 0 auto;
   list-style: none;
 `;

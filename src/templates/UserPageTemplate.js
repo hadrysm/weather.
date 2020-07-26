@@ -12,7 +12,7 @@ const StyledWrapper = styled.div`
   align-items: center;
   position: relative;
   min-height: 100vh;
-  padding-bottom: calc(10vh + 2rem);
+  padding-bottom: 2rem;
   overflow: hidden;
   background-color: ${({ theme }) => theme.white};
 `;

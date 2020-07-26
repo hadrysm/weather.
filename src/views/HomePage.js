@@ -15,19 +15,23 @@ import listIcon from 'assets/icons/list.svg';
 
 const StyledImg = styled.img`
   flex: 1;
-  height: 100%;
+  width: 70%;
 
   @media ${({ theme }) => theme.mq.desktop} {
-    width: 40%;
+    width: 55%;
+  }
+
+  @media ${({ theme }) => theme.mq.bigDesktop} {
+    width: 45%;
+  }
+
+  @media ${({ theme }) => theme.mq.huge} {
+    width: 25%;
   }
 `;
 
 const StyledForm = styled(Form)`
-  margin: 0 auto 1rem;
-`;
-
-const StyledCard = styled(Card)`
-  flex: 1;
+  margin: 0 auto;
 `;
 
 const StyledButtonIcon = styled(ButtonIcon)`
@@ -44,7 +48,7 @@ const HomePage = ({ weatherData, error }) => {
   if (weatherData) {
     mainContent = (
       <>
-        <StyledCard />
+        <Card />
         <StyledButtonIcon as={Link} to="/weather-list" icon={listIcon} />
       </>
     );

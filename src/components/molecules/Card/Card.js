@@ -13,7 +13,7 @@ const StyledWrapper = styled.div`
   align-items: center;
   flex-direction: column;
   min-width: 30rem;
-  margin: 0 auto;
+  margin: 10rem auto 7rem;
   border-radius: 2.5rem;
   background-color: ${({ theme }) => theme.dark200};
   overflow: hidden;
