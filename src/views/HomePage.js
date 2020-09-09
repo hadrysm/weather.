@@ -18,18 +18,7 @@ import listIcon from 'assets/icons/list.svg';
 const StyledImg = styled.img`
   flex: 1;
   width: 70%;
-
-  @media ${({ theme }) => theme.mq.desktop} {
-    width: 55%;
-  }
-
-  @media ${({ theme }) => theme.mq.bigDesktop} {
-    width: 45%;
-  }
-
-  @media ${({ theme }) => theme.mq.huge} {
-    width: 25%;
-  }
+  max-width: 400px;
 `;
 
 const StyledForm = styled(Form)`
