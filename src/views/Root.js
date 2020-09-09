@@ -5,12 +5,14 @@ import MainTemplate from 'templates/MainTemplate';
 import HomePage from 'views/HomePage';
 import WeatherListPage from 'views/WeatherListPage';
 
+import { routes } from 'routes';
+
 const Root = () => {
   return (
     <MainTemplate>
       <Switch>
-        <Route path="/" exact component={HomePage} />
-        <Route path="/weather-list" component={WeatherListPage} />
+        <Route path={routes.home} exact component={HomePage} />
+        <Route path={routes.weatherList} component={WeatherListPage} />
       </Switch>
     </MainTemplate>
   );

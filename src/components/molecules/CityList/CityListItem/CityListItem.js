@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import actions from 'store/weather/actions';
+import { routes } from 'routes';
 
 import Heading from 'components/atoms/Heading/Heading';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
@@ -54,7 +55,7 @@ const CityListItem = ({ cityData, setCurrentCity }) => {
   for (let i = 0; i < cityData.length; i += 5) {
     cityItem = (
       <InnerWrapper id={cityData[i].id} onClick={handleClick}>
-        <StyledLink to="/">
+        <StyledLink to={routes.home}>
           <StyledInfo>
             <StyledHeading as="h3">{cityData[i].location.city}</StyledHeading>
             <StyledParagraph>{cityData[i].temp}°C</StyledParagraph>

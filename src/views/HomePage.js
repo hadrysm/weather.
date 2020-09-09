@@ -10,6 +10,8 @@ import Card from 'components/molecules/Card/Card';
 import ButtonIcon from 'components/atoms/ButtonIcon/ButtonIcon';
 import ErrorHandler from 'components/atoms/ErrorHandler/ErrorHandler';
 
+import { routes } from 'routes';
+
 import undrawImage from 'assets/image/undraw.svg';
 import listIcon from 'assets/icons/list.svg';
 
@@ -49,7 +51,7 @@ const HomePage = ({ weatherData, error }) => {
     mainContent = (
       <>
         <Card />
-        <StyledButtonIcon as={Link} to="/weather-list" icon={listIcon} />
+        <StyledButtonIcon as={Link} to={routes.weatherList} icon={listIcon} />
       </>
     );
   }
